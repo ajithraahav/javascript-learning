@@ -108,7 +108,7 @@ var array = [[1,2,3], [4,5,6], [7,8,9], [[10,11,12], 13, 14]];
 var arrdata = arrdata[3][0][1];          // Access multidimensional array 
 console.log(arrdata);                    // output - 11         
 
-var array = ["ajith", "karthi", "vijay"]; // Maniplate array with push()
+var array = ["ajith", "karthi", "vijay"]; // Maniplate array with push() - add elements in last
 array.push(["kishore","pradeep"]);        // output - [ 'ajith', 'karthi', 'vijay', [ 'kishore', 'pradeep' ] ]
 
 var array = [1, 2, 3];           // Manipulate array with pop()
@@ -119,8 +119,8 @@ var array = [1, 2, 3];           // Manipulate array with shift()
 var shifted = array.shift();     // shift() removes the  first element 
 console.log(shifted);            // output - 1
 
-var array = ["ajith", "karthi", "vijay"]; 
-array.unshift("kishore");                   // Maniplate array with unshift()
+var array = ["ajith", "karthi", "vijay"];   // Maniplate array with unshift()
+array.unshift("kishore");                   // unshift() - add elements first
 console.log(array);                         // output - ["kishore", "ajith", "karthi", "vijay"]
 
 ```
@@ -139,8 +139,88 @@ function args(a,b){
 }
 args(3,5);   // output - 8
 
-//Global Scope
+```
+### Scope ###
+### Block scope ###
+* let and const keyword provide block scope in javascript
+* Variables declared inside a { } block cannot be accessed from outside the block.
 
+```javascript
+{
+  var x = 2;
+}
+// x CAN be used here
 
+```
+### Local scope ###
+
+* They can only be accessed from within the function.
+
+```javascript
+function myFunction() {
+  let carName = "Volvo";
+  // code here CAN use carName
+}
+// code here can NOT use carName
+```
+
+### Global scope ###
+
+* A global variable has Global Scope:
+* All scripts and functions on a web page can access it. 
+
+### JSON Stringyfy ###
+
+Use the JavaScript function JSON.stringify() to convert it into a string.
+
+```javascript
+
+const obj = {name: "John", age: 30, city: "New York"};
+const myJSON = JSON.stringify(obj);
+//output - {"name":"John","age":30,"city":"New York"}
+
+```
+* The result will be a string following the JSON notation.
+* myJSON is now a string, and ready to be sent to a server.
+
+### Stand In line ###
+
+We will write a function that is based on a computer science concept called a queue where we add and remove items to and from an array.
+
+The file worked is saved as "functions-standline.js".
+
+### If Statements ###
+
+```javascript
+function ourTrueorFlase(isItTrue) {
+  if (isItTrue) {
+    return "Yes, it's true";
+  }
+  return "Yes, it is false";
+}
+console.log(ourTrueorFlase(false));     // output - "Yes, it is false";
+
+if (val <= 50 && val >= 25)   // this is not a if- statement code it is for && And operator
+
+```
+
+### Difference between AND and OR Operator ###
+```javascript
+
+function greater(value) {
+  if (val == 10 && value < 100) {
+    return "The value is equal to 10 and less than 100";
+  }
+  return "The one condition is false";   // output 
+}
+console.log(greater(11));   // In the AND && operator compulsoryly it have to complete two conditions
+
+function greater(value) {
+  if (val == 10 || value < 100) {
+    return "The value is equal to 10 or less than 100";  // output 
+  }
+  return "The two condition is false"; 
+}
+console.log(greater(11));   // In the OR || operator the one condition is ok
 
 ```
