@@ -18,26 +18,26 @@ function fun2() {
 // fun1();
 // fun2();
 
-// Function return value 
+// Function return value
 
 function add(num) {
-    return num - 7;
+  return num - 7;
 }
-// console.log(add(10));
+console.log(add(10));
 
 // Function return undefined
 
-var sum = 10 ;
-function add1(){
-    sum = sum + 3;
+var sum = 10;
+function add1() {
+  sum = sum + 3;
 }
 // console.log(add1());
 
 // Assignment return value
 
 var changed = 0;
-function change(num){
-    return (num + 5 ) / 3;
+function change(num) {
+  return (num + 5) / 3;
 }
 changed = change(10);
 
