@@ -192,13 +192,13 @@ The file worked is saved as "functions-standline.js".
 ### If Statements ###
 
 ```javascript
-function ourTrueorFlase(isItTrue) {
-  if (isItTrue) {
-    return "Yes, it's true";
+  function ourTrueorFlase(isItTrue) {
+    if (isItTrue) 
+      return "Yes, it's true";
+    if(isTfalse)
+    return "Yes, it is false";
   }
-  return "Yes, it is false";
-}
-console.log(ourTrueorFlase(false));     // output - "Yes, it is false";
+  console.log(ourTrueorFlase(false));     // output - "Yes, it is false";
 
 if (val <= 50 && val >= 25)   // this is not a if- statement code it is for && And operator
 
@@ -222,5 +222,487 @@ function greater(value) {
   return "The two condition is false"; 
 }
 console.log(greater(11));   // In the OR || operator the one condition is ok
+
+```
+### Build Objects ###
+
+* It is a common practice to declare objects with the const keyword.
+
+```javascript 
+
+const bike = {"name":"honda", "color":"white", "gear": 4, "speed":100};
+
+bike.name = "bajaj";          //updating object values
+bike.petroltank = "12l";      //adding object values
+delete bike.speed;            //delete object property and values
+
+console.log(.bike.name);      //accessing object using dot notation        //output - hond a
+console.log(bike["color"]);   //accessing object using bracket notation    //output - white 
+console.log(.bike.gear);      //output - 4 
+console.log(.bike.speed);     //output - 100
+
+```
+### Object Lookups ###
+```javascript
+function phoneticLookup(val) {
+  var result = 0;
+
+  var lookup = {
+    Ajith: 1,
+    Kathi: 2,
+    Vijay: 3,
+    Pradeep: 4,
+    Kishore: 5,
+  };
+  result = lookup[val];    // the bracket notation only works on it , dot notation return undeifined
+  return result;
+}
+console.log(phoneticLookup("Ajith"));
+
+```
+### Testing Objet for Properties ###
+
+```javascript 
+
+var comp = { 
+    "dell": 10,
+    "hp":3,
+    "lenovo": 20,
+    "sony": 4,
+ };
+ 
+ function checkComputer(checkComp){  
+   if (comp.hasOwnProperty(checkComp)){   
+     //hasOwnProperty  The hasOwnProperty() method returns a boolean indicating whether the object has the specified property as its own property
+     return comp[checkComp];
+   }
+   else{
+     return "Not found";
+   }
+ }
+
+ console.log(checkComputer("hp"));   //output 3
+
+```
+### Accessing Nested Object ###
+
+```javascript
+var myStorage = {
+    "car":{
+        "inside":{
+            "glovebox": "maps",
+            "passenger seat": "crumbs",
+        },
+        "outside":{
+            "trunk":"jack",
+        }
+    }
+};
+
+var gloveboxContent = myStorage.car.inside["glovebox"];  // output maps
+
+console.log(gloveboxContent);
+
+```
+
+### Accessing Nested Array ###
+
+```javascript
+
+var myPlants = [ 
+    {
+        type: "flower",
+        lsit: [
+            "rose",
+            "tulip",
+            "dandelion"
+        ]
+    },
+    {
+        type: "trees",
+        list: [
+            "fir",
+            "pine",
+            "birch"
+        ]
+    }
+];
+
+var secondTree = myPlants[1].list[1]; 
+
+console.log(secondTree);   // output - pine
+
+```
+
+### while loop ###
+
+```javascript
+
+var arr = [];
+
+var i = 0;
+
+while(i < 5){
+   arr.push(i);
+   i++;
+}
+console.log(arr);        //output - [0,1,2,3,4,5]
+
+```
+
+### for loop ###
+
+```javascript
+
+var arr = [];
+
+for (i=0; i < 6; i++){
+  arr.push(i);
+}
+console.log(arr);        //output - [0,1,2,3,4,5]
+
+```
+
+### even num ###
+```javascript
+
+var arr = [];
+
+for(i=0; i < 10; i += 2){
+     arr.push(i);
+}
+
+console.log(arr);
+
+```
+### odd num ###
+```javascript
+
+var arr = [];
+
+for(i=1; i < 10; i += 2){
+     arr.push(i);
+}
+
+console.log(arr);
+
+```
+### counting backward ###
+
+```javascript
+
+var arr = [];
+
+for(i=10; i > 0; i-=2){
+     arr.push(i);
+}
+
+console.log(arr);
+
+```
+
+### Iterate Through an array with a for loop ###
+
+```javascript
+
+var arr = [1,2,3,4,5];
+var total = 0;
+
+for(i=0; i < arr.length; i++){
+   total = total + arr[i];
+}
+
+console.log(total);  // ouptut - 15
+
+```
+
+### do while loop ###
+
+```javascript
+var arr = [];
+var i =10;
+
+do{
+    arr.push(i);
+    i++;
+}while(i < 5)
+
+console.log(i, arr);
+```
+### random in math ###
+
+* Math.random - gives random values betweeen  0 and 1
+* Math.floor - gives nearest value of the random value
+
+```javascript
+
+function randomFraction(){
+    return Math.random();         //0.24522840312905458
+    return Math.floor(Math.random()*10);   //ouput  - 8 for return nearest whole numbers 
+    return Math.floor(Math.random()* (ourMax - ourMin + 1)) + ourMin;   // 15 - give answer between 5 to 15 the range
+}
+
+console.log(randomFraction(5,15)); 
+
+
+```
+
+### parseInt functions ###
+
+*parsrInt - the functions convert he string into numbers  
+
+```javascript
+
+function numericString(str){
+    return parseInt(str);
+}
+var a = numericString("56") + 1;
+
+console.log(a);      //output - 57
+
+```
+* to give binary number pass 2 as base 2.the default value is base 10
+
+```javascript
+
+function numericString(str){
+    return parseInt(str,2);
+}
+
+console.log("10011");   //to give binary number pass 2 as base 2.the default value is base 10
+ ```
+
+ ### terenary operator ###
+
+* In the below program "a==b" is the condition it is like if condtion if it is true it give tre otherwise it give fales.
+
+ ```javascript 
+ function value(a,b){
+        return a==b ? true : false;
+}
+
+console.log(value(1,2));  // false
+```
+* it uses multiple condition in terenary operator
+
+```javascript
+function checkNum(num){
+    return num > 0 ? "positive" : num < 0 ? "negative": "zero"
+}
+
+console.log(checkNum(10));
+
+```
+### difference between var let ###
+
+```javascript 
+var a = "ab";
+var a = "ba";
+console.log(a);   // it gives the last assigned value
+
+
+let a = "ab";
+let a = "ba";
+console.log(a);   // but when we use let it gives duplication error
+```
+* var - has the global scope or local scope
+* let - has the block scope or a expression
+
+### const ###
+
+* it also have the all the features of the let
+* It read only cannot ressign a value 
+* If we ressgin it we get the error read only
+* try to use const in capitl letters
+ 
+* MUTATE ARRAY DECALRE WITH CONST
+
+```javascript
+const s = [3,2,1];
+function exitConst(){
+  "use strict"
+  s = [1,2,3,]; // it gives error "s" is read only 
+  s[0]= 1;
+  s[1]= 2;
+  s[2]= 3;  //output - [1,2,3]
+} 
+```
+### prevent object mutaion ###
+
+* when dont want to change object value use object.freeze.
+
+
+```javascript
+function freezeObj(){
+    "use strict";
+    const MATH_CONSTANT = { PI:3.1 };
+
+    Object.freeze(MATH_CONSTANT);
+
+    try{
+        MATH_CONSTANT.PI = 99;
+    }
+    catch(ex){
+        console.log(ex);
+    }
+    return MATH_CONSTANT.PI;
+}
+
+const PI = freezeObj(); 
+
+console.log(PI);
+```
+
+### Arrow functions ###
+* whenever you have an anonymous function convert it to an arrow funcitons 
+
+```javascript
+
+var magic = function(){
+  return new Date();
+};                     //it is anonymous functions
+
+-----------------------------------------
+
+const magi = () = > new Date();     //converted to arrow function 
+
+```
+* arrow function with parameters
+
+```javascript
+
+var myConcat = function(arr1,arr2){
+  return arr1.concat(arr2);                         //it is anonymous functions
+}
+
+console.log(myConcat([1,2],[3,4,5]));      //output - [1,2,3,4,5]
+
+------------------------------
+
+var myConcat = (arr1,arr2) => arr1.concat(arr2);   //converted to arrow function
+console.log(myConcat([1,2],[3,4,5]));       //output - [1,2,3,4,5]
+
+```
+
+
+### map ###
+* creates a new array from calling a function for every array element.
+* calls a function once for each element in an array.
+* does not execute the function for empty elements.
+* does not change the original array.
+
+```javascript
+const numbers = [65, 44, 12, 4];
+const newArr = numbers.map(myFunction)
+
+function myFunction(num) {
+  return num * 10;                   
+}
+console.log(newArr);         //output - [650, 440, 120, 40]
+
+```
+
+### filter ###
+
+* The filter() method creates a new array filled with elements that pass a test provided by a function.
+* The filter() method does not execute the function for empty elements.
+* The filter() method does not change the original array.
+
+```javascript
+
+const ages = [32, 33, 16, 40];
+const result = ages.filter(checkAdult);
+
+function checkAdult(age) {
+  return age >= 18;
+}
+```
+### rest operator and reduce ###
+* When the spread operator is used as a parameter, it is known as the rest parameter.
+* You can also accept multiple arguments in a function call using the rest parameter.
+* The rest parameter must be the last parameter in the function definition.
+* The rest parameter syntax allows a function to accept an indefinite number of arguments as an array
+
+```javascript
+
+const sum = (function(){
+    return function sum(...args){        // the rest oeprator is used to convert all the arguments to array
+        return args.reduce((a,b)=>a*b,0)   //The reduce() method returns a single value: the function's accumulated result.
+    };
+})();
+console.log(sum(1,2,3));
+
+```
+### spread operator ###
+
+* The spread operator ... is used to expand or spread an iterable or an array. 
+
+*  In the below code arr2 gives duplicated array value because the value assigned using spread it takes copy of array it dipslay the copy.so, it doesn't modified
+* The arr1 gives the modified value because the array is assigned normally
+
+```javascript
+
+const arr1 = ["jan", "feb", "mar", "april", "may"];
+let arr2;
+(function () {
+  arr2 = [...arr1];
+  arr2 = arr1;
+
+  arr1[0] = "potato";
+})();
+console.log(arr2);       //[ 'jan', 'feb', 'mar', 'april', 'may' ]
+console.log(arr1);       //[ 'potato', 'feb', 'mar', 'april', 'may' ]   
+
+```
+
+### destrcuturing assignment ###
+
+```javascript
+
+var voxel = { x: 3.6, y: 7.4, z: 6.54 };
+
+//old method
+var x = voxel.x;        //x=3.6
+var y = voxel.y;        //y=7.4 
+var z = voxel.z;        //z=6.54
+
+const { x: a, y: b, z: c } = voxel;   // a = 3.6, b = 7.4, z = 6.54  destrcuturing assignment method
+
+```
+
+```javascript
+//nested destructuring assignment
+const LOCAL_FORECAST = {
+    today:{min: 72, max: 83},
+    tomorrow:{min: 73.3, max: 84.6}
+};
+
+function getMaxOfTmrw(forecast){
+    "use strict";
+
+    const {tomorrow : {max: maxOfTomorrow}} = forecast;
+
+    return maxOfTomorrow;
+}
+
+console.log(getMaxOfTmrw(LOCAL_FORECAST));
+
+```
+```javascript
+// use destructuring assignment to assign variables from arrays
+
+const [p,q,,r] = [1,2,3,4,5];   //extra comma is used to go to next value
+
+console.log(p,q,r);           // output - 1,2,4
+
+------------------------------------------
+let i = 8, j=6;
+
+(()=>{
+    "use strict";
+    [i,j] = [j, i];
+})();
+console.log(i);             //output - 6
+console.log(j);             //output - 8
 
 ```

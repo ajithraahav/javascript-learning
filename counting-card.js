@@ -25,4 +25,4 @@ function cc(card){
 }
 
 cc(2);cc('K');cc(10);cc('K');cc('A');
-console.log(cc(4,));
+console.log(cc(4));
